@@ -87,7 +87,7 @@ end
   false
 end
 
-def full?(board)
+def full?
   @board.all? do |position|
     position == "X" || position == "O"
   end
