@@ -15,7 +15,6 @@ WIN_COMBINATIONS = [
     ]
 
 def display_board
-  @display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
   puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -23,9 +22,8 @@ def display_board
   puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
 end
 
-def input_to_index(user_input)
-  @input_to_index
-  user_input.to_i - 1
+def input_to_index(input)
+  @index = input.to_i - 1
 end
 
 def move(index, current_player="X")
@@ -37,7 +35,6 @@ def position_taken?(index)
   end
 
 def valid_move?(index)
-  @valid_move
  if index.between?(0,8) && !position_taken?(index)
    return true
  else 
@@ -46,17 +43,19 @@ end
 end
 
 def turn
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = @input_to_index
-  if @valid_move
-    move(index, current_player="X")
-    @display_board
-  else
-    until over?(board)
-    turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(board, index)
+      move(board, index)
+      display_board(board)
+    else
+      turn
+    end
   end
-end
+
+
+
 
 def turn_count
   occupied_positions = 0
@@ -113,7 +112,7 @@ else
 end
 end
   
-def over?(board) 
+def over?
   if won?(board) == true && full?(board) == false 
     return true 
   elsif
@@ -149,8 +148,8 @@ return nil
 end
 
 def play
-  until over?(@board) do
-  turn(@board)
+  until over?(board) do
+  @turn
   end
   if winner(board) == "X"
     puts "Congratulations X!"
@@ -163,5 +162,4 @@ def play
 end
 end
 
-end
 end
