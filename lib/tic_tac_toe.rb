@@ -123,7 +123,7 @@ return nil
 end
 
 def play
-  until over?(board) do
+  until over? do
   @turn
   end
   if winner(board) == "X"
