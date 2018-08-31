@@ -124,12 +124,12 @@ end
 
 def play
   until over? do
-  if winner(board) == "X"
+  if winner == "X"
     puts "Congratulations X!"
-  elsif winner(board) == "O"
+  elsif winner == "O"
     puts "Congratulations O!"
   else 
-    if draw?(board)
+    if draw?
     puts "Cat's Game!"
   end 
 end
