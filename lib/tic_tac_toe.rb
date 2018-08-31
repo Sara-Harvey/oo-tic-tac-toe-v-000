@@ -124,7 +124,6 @@ end
 
 def play
   until over? do
-  @turn
   end
   if winner(board) == "X"
     puts "Congratulations X!"
