@@ -54,9 +54,6 @@ def turn
     end
   end
 
-
-
-
 def turn_count
   occupied_positions = 0
   @board.each do |position|
