@@ -98,18 +98,8 @@ end
   end
   
 def over?
-  if won?(board) == true && full?(board) == false 
-    return true 
-  elsif
-    draw?(board) == true || full?(board) == true || won?(board) == true 
-    return true
-  else
-    if won?(board) == false && full?(board) == false
-    return false
-end  
-return true
-end
-end
+    won? || draw? || full? ? true : false
+  end
 
 def winner(board)
 WIN_COMBINATIONS.each do |win_combination|
