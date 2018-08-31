@@ -93,17 +93,9 @@ def full?(board)
   end
 end
 
-def draw?
-if full?(board) == true && won?(board) == false
-  return true
-elsif full?(board) == false && won?(board) == false
-  return false
-else
-  if full?(board) == false && won?(board) == true
-  return true
-  end 
-end
-end
+ def draw?
+    !won? && full? ? true : false
+  end
   
 def over?
   if won?(board) == true && full?(board) == false 
