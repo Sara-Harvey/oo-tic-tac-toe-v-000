@@ -124,7 +124,6 @@ end
 
 def play
   until over? do
-  end
   if winner(board) == "X"
     puts "Congratulations X!"
   elsif winner(board) == "O"
