@@ -124,15 +124,6 @@ end
 
 def play
   turn until over?
-  if winner == "X"
-    puts "Congratulations X!"
-  elsif winner == "O"
-    puts "Congratulations O!"
-  else 
-    if draw?
-    puts "Cat's Game!"
-  end 
-end
-end
-
+    puts draw? ? "Cat's Game!" : "Congratulations #{winner}!"
+  end
 end
