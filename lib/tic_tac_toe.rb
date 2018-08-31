@@ -123,8 +123,7 @@ return nil
 end
 
 def play
-  until over?
-  turn
+  turn until over?
   if winner == "X"
     puts "Congratulations X!"
   elsif winner == "O"
