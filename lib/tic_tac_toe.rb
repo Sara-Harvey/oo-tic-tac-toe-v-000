@@ -65,12 +65,10 @@ occupied_positions
 end
 
 def current_player
-  if turn_count % 2 == 0
-    "X"
-  else
-    "O"
-  end
+  turn_count.even? ? "X" : "O"
 end
+
+
 
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
